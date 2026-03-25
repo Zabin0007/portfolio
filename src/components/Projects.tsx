@@ -25,10 +25,10 @@ export default function Projects() {
   ];
 
   return (
-    <section id="work" className="relative min-h-screen bg-[#121212] py-32 px-6 md:px-24 border-t border-white/10">
+    <section id="work" className="relative min-h-screen bg-[#121212] py-32 px-6 md:px-24 border-t border-white/10 overflow-hidden">
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-16 tracking-tight">
           Selected Works
@@ -49,11 +49,11 @@ export default function Projects() {
                   <a href="#" className="hover:text-white transition-colors" aria-label="Live Demo"><ExternalLink className="w-5 h-5" /></a>
                 </div>
               </div>
-              
+
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 {project.description}
               </p>
-              
+
               <div className="flex flex-wrap gap-3">
                 {project.tech.map((tech, i) => (
                   <span

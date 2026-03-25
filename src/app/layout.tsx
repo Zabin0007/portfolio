@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Creative Developer | Portfolio",
-  description: "Scrollytelling Personal Portfolio Website",
+  title: "ZAAB",
+  description: "Personal Portfolio Website",
 };
 
 import Navbar from "@/components/Navbar";
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased bg-[#121212] text-white`}>
+      <body className={`${inter.variable} font-sans antialiased bg-[#121212] text-white `}>
         {/* <BackgroundMusic /> */}
         {/* <FireBorder /> */}
         <Navbar />
