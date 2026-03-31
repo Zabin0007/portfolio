@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: "ZAAB",
+  title: "ZAAB | Architect",
   description: "Personal Portfolio Website",
 };
 
 import Navbar from "@/components/Navbar";
-import BackgroundMusic from "@/components/BackgroundMusic";
-import FireBorder from "@/components/FireBorder";
 
 export default function RootLayout({
   children,
@@ -20,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased bg-[#121212] text-white `}>
-        {/* <BackgroundMusic /> */}
-        {/* <FireBorder /> */}
+      <body className={`${playfair.variable} ${jetbrains.variable} font-sans antialiased bg-[#010101] text-white overflow-x-hidden`}>
         <Navbar />
         {children}
       </body>

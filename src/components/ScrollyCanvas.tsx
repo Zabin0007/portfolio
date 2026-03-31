@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent, MotionValue } from "framer-motion";
 
-const FRAME_COUNT = 240; // 1 to 240
+const FRAME_COUNT = 240; 
 
 interface ScrollyCanvasProps {
   children?: (progress: MotionValue<number>) => React.ReactNode;

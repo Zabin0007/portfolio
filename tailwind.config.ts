@@ -11,7 +11,18 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        obsidian: "#010101",
+        charcoal: "#0A0A0A",
+        gold: "#D4AF37",
+        "gold-hover": "#b8952b",
       },
+      fontFamily: {
+        sans: ["var(--font-playfair)", "serif"],
+        mono: ["var(--font-jetbrains)", "monospace"],
+      },
+      backgroundImage: {
+        'noise': "url('/noise.png')",
+      }
     },
   },
   plugins: [],
