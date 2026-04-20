@@ -6,7 +6,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: "ZAAB | Architect",
+  title: "ZAAB | Developer",
   description: "Personal Portfolio Website",
 };
 
