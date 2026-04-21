@@ -27,11 +27,11 @@ export default function Navbar() {
         { opacity: 0, x: -20, filter: "blur(5px)" },
         { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.6, ease: "power2.out" }
       )
-      .fromTo(".nav-link-item",
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: "power2.out" },
-        "-=0.3"
-      );
+        .fromTo(".nav-link-item",
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: "power2.out" },
+          "-=0.3"
+        );
     };
 
     window.addEventListener("reveal-logo", handleReveal);
@@ -78,7 +78,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <Link
           href="#top"
-          className={`nav-logo text-2xl font-black tracking-tighter text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] ${!logoVisible ? 'opacity-0' : 'opacity-100'}`}
+          className={`nav-logo text-2xl font-black tracking-tighter hover:text-[#b31b1b] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] ${!logoVisible ? 'opacity-0' : 'opacity-100'}`}
         >
           ZABIN.
         </Link>

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useScroll, useTransform, useMotionValueEvent, MotionValue } from "framer-motion";
 
-const FRAME_COUNT = 240; 
+const FRAME_COUNT = 150;
 
 interface ScrollyCanvasProps {
   children?: (progress: MotionValue<number>) => React.ReactNode;
@@ -24,8 +24,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
     for (let i = 1; i <= FRAME_COUNT; i++) {
       const img = new Image();
       const paddedIndex = String(i).padStart(3, "0");
-      
-      // Try WebP first, fall back to PNG if missing
+
       img.src = `/sequence/ezgif-frame-${paddedIndex}.webp`;
       
       img.onload = () => {
@@ -34,20 +33,15 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
           setImagesLoaded(true);
         }
       };
-      
-      img.onerror = () => {
-        // If webp failed, try falling back to png
-        if (img.src.includes(".webp")) {
-          img.src = `/sequence/ezgif-frame-${paddedIndex}.png`;
-          return;
-        }
 
+      img.onerror = () => {
+        console.error(`Failed to load image: ${img.src}`);
         loadedCount++;
         if (loadedCount >= SHOW_THRESHOLD && !imagesLoaded) {
           setImagesLoaded(true);
         }
       };
-      
+
       loadedImages.push(img);
     }
     setImages(loadedImages);
@@ -66,7 +60,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
     if (!canvas || !ctx || !images[index]) return;
 
     const img = images[index];
-    
+
     // Avoid drawing if the image failed to load
     if (!img.complete || img.naturalHeight === 0) return;
 
@@ -94,7 +88,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
 
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // Draw image with cover logic
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
   }, [images]);
@@ -109,7 +103,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
   useEffect(() => {
     if (imagesLoaded) {
       drawImage(0);
-      
+
       const handleResize = () => drawImage(Math.round(currentIndex.get()));
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);

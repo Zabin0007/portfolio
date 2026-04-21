@@ -146,7 +146,7 @@ export default function TechStack() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: brightness(0.5) contrast(1.2);
+          filter: brightness(0.9) contrast(1.2);
         }
         .ts-overlay {
           position: absolute;
@@ -294,7 +294,7 @@ export default function TechStack() {
               alt="Tech background"
               fill
               className="object-cover"
-              style={{ filter: "brightness(0.5) contrast(1.2)" }}
+              style={{ filter: "brightness(0.9) contrast(1.2)" }}
               priority
             />
             <div className="ts-overlay" />

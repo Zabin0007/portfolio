@@ -8,12 +8,12 @@ interface OverlayProps {
 
 export default function Overlay({ scrollYProgress }: OverlayProps) {
   // Section 2: Fades in early and stays
-  const opacity2 = useTransform(scrollYProgress, [0.05, 0.15, 0.9, 0.98], [0, 1, 1, 0]);
-  const y2 = useTransform(scrollYProgress, [0.05, 0.17], [20, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0.11, 0.15, 0.9, 0.98], [0, 1, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.11, 0.17], [20, 0]);
 
   // Section 3: Fades in earlier and stays
-  const opacity3 = useTransform(scrollYProgress, [0.09, 0.24, 0.9, 0.98], [0, 1, 1, 0]);
-  const y3 = useTransform(scrollYProgress, [0.09, 0.24], [20, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0.16, 0.24, 0.9, 0.98], [0, 1, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.16, 0.24], [20, 0]);
 
   return (
     <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-center overflow-hidden">
