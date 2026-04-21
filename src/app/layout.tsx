@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 import Navbar from "@/components/Navbar";
+import Preloader from "@/components/Preloader";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${playfair.variable} ${jetbrains.variable} font-sans antialiased bg-[#010101] text-white overflow-x-hidden`}>
+        <Preloader />
         <Navbar />
         {children}
       </body>

@@ -7,39 +7,23 @@ interface OverlayProps {
 }
 
 export default function Overlay({ scrollYProgress }: OverlayProps) {
-  // Section 1: 0% to 20%
-  const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 0, 0]);
-  const scale1 = useTransform(scrollYProgress, [0, 0.25], [0.7, 0.3]); // Gentle zoom instead of vertical movement
+  // Section 2: Fades in early and stays
+  const opacity2 = useTransform(scrollYProgress, [0.05, 0.15, 0.9, 0.98], [0, 1, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.05, 0.17], [20, 0]);
 
-  // Section 2: 25% to 45% (Shifted so it doesn't overlap with Section 3)
-  const opacity2 = useTransform(scrollYProgress, [0.2, 0.25, 0.4, 0.45], [0, 1, 1, 0]);
-  const y2 = useTransform(scrollYProgress, [0.2, 0.45], [40, -40]); // Subtle slide
-
-  // Section 3: 50% to 75%
-  const opacity3 = useTransform(scrollYProgress, [0.5, 0.55, 0.7, 0.75], [0, 1, 1, 0]);
-  const y3 = useTransform(scrollYProgress, [0.5, 0.75], [40, -40]); // Subtle slide
+  // Section 3: Fades in earlier and stays
+  const opacity3 = useTransform(scrollYProgress, [0.09, 0.24, 0.9, 0.98], [0, 1, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.09, 0.24], [20, 0]);
 
   return (
     <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-center overflow-hidden">
-      {/* Section 1 */}
-      <motion.div
-        style={{ opacity: opacity1, scale: scale1 }}
-        className="absolute  w-full text-center top-1/2"
-      >
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
-          {/* HEY */}
-        </h1>
-        <p className="mt-4 text-xl md:text-2xl text-zinc-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-light tracking-wide">
-          {/* Full Stack Developer. */}
-        </p>
-      </motion.div>
 
       {/* Section 2 */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute top-1/2 left-0 md:left-24 w-full md:w-auto px-6 md:px-0 -translate-y-1/2 text-left"
+        className="absolute top-[40%] md:top-1/2 left-0 md:left-24 w-full md:w-auto px-6 md:px-0 -translate-y-1/2 text-center md:text-left"
       >
-        <h2 className="text-4xl md:text-6xl font-bold max-w-[80vw] md:max-w-lg text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+        <h2 className="text-3xl md:text-6xl font-bold max-w-[80vw] md:max-w-lg text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] mx-auto md:mx-0">
           I AM ZABIN
         </h2>
       </motion.div>
@@ -47,9 +31,9 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       {/* Section 3 */}
       <motion.div
         style={{ opacity: opacity3, y: y3 }}
-        className="absolute top-1/2 right-0 md:right-24 w-full md:w-auto px-6 md:px-0 -translate-y-1/2 text-right"
+        className="absolute top-[60%] md:top-1/2 right-0 md:right-24 w-full md:w-auto px-6 md:px-0 -translate-y-1/2 text-center md:text-right"
       >
-        <h2 className="text-4xl md:text-6xl font-bold max-w-[80vw] md:max-w-lg ml-auto text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+        <h2 className="text-3xl md:text-6xl font-bold max-w-[80vw] md:max-w-lg mx-auto md:ml-auto text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
           FULL STACK DEVELOPER
         </h2>
       </motion.div>

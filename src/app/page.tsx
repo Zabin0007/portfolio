@@ -10,9 +10,9 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <main id="top" className="bg-obsidian min-h-screen selection:bg-gold/30">
-      {/* <ScrollyCanvas>
+      <ScrollyCanvas>
         {(progress) => <Overlay scrollYProgress={progress} />}
-      </ScrollyCanvas> */}
+      </ScrollyCanvas>
       <About />
       <TechStack />
       <Projects />

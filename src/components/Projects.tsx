@@ -9,76 +9,85 @@ const projects = [
   {
     id: "midnight-rain",
     fileNo: "01",
-    title: "OPERATION: MIDNIGHT RAIN",
-    subtitle: "Neon Heist Platform",
-    year: "1947",
-    location: "Chinatown, NYC",
+    title: "Now Score",
+    subtitle: "Live Score App",
+    year: "2026",
+    location: "Kannur, Kerala",
     status: "CLOSED",
-    description: "A high-stakes e-commerce operation moved through the rain-slick alleys of downtown. Built to handle traffic from every back-room buyer in the district.",
+    description: "A real-time football arena coded under floodlights. Built to stream every goal, every whistle, every heartbeat of the match — live, relentless, and untouchable in production.",
     objectives: [
-      "Custom checkout pipeline",
-      "Real-time inventory shadows",
-      "Untraceable analytics"
+      "Custom authentication pipeline with JWT and Google OAuth",
+      "WebSocket-driven match updates and instant notifications",
+      "Redis-powered caching for ruthless performance",
+      "Scalable REST APIs for players, matches, and users",
+      "React Query orchestration for state and data shadows",
+      "Dockerized services, stitched together with Compose",
+      "NGINX reverse proxy guarding the gates",
+      "AWS EC2 deployment, armored with SSL"
     ],
-    tech: ["React", "Stripe", "Supabase"],
-    image: "/images/noir_alley.png",
+    tech: ["Next", "Redis", "Node.js", "Express.js", "MongoDB", "Docker", "Nginx"],
+    image: "/images/nowScore.png",
     rotation: -3,
     position: "mt-10 md:mt-24 ml-0 md:ml-12"
   },
   {
     id: "the-getaway",
     fileNo: "02",
-    title: "THE GETAWAY",
-    subtitle: "High-Speed Fintech",
-    year: "1948",
-    location: "Lower East Side",
+    title: "CB Perfume",
+    subtitle: "E-commerce Platform",
+    year: "2025",
+    location: "Calicut, Kerala",
     status: "ACTIVE",
-    description: "Financial dashboard running hotter than a stolen engine. Processes real-time ledgers before the feds even know the vault is empty.",
+    description: "A digital perfume house coded in velvet shadows. Built to showcase every scent, every bottle, every story — an online boutique that whispers luxury through the screen.",
     objectives: [
-      "Sub-second websocket feeds",
-      "Encrypted data vaults",
-      "Multi-currency laundering"
+      "Full-stack e-commerce module with product listings, filters, and cart flow",
+      "API-driven dynamic content for seamless catalog updates",
+      "Responsive UI tuned for elegance across devices",
+      "Performance optimizations for faster, smoother load times"
     ],
-    tech: ["Next.js", "WebSockets", "Node.js"],
-    image: "/images/noir_car.png",
+    tech: ["Next.js", "Redux", "Tailwind Css", "OAuth", "JWT Auth"],
+    image: "/images/cb.png",
     rotation: 2,
     position: "mt-4 md:mt-12 mx-auto"
   },
   {
     id: "the-scribe",
     fileNo: "03",
-    title: "THE SCRIBE",
-    subtitle: "AI Intelligence Gathering",
-    year: "1949",
-    location: "Brooklyn Heights",
-    status: "COLD CASE",
-    description: "A machine that spits out words faster than a snitch looking at 20-to-life. Generative AI interface for compiling dossiers and cracking codes.",
+    title: "Kaffaway",
+    subtitle: "E-commerce Platform",
+    year: "2025",
+    location: "Calicut, Kerala",
+    status: "Closed",
+    description: "A caffeine brand coded in motion. Built to showcase powder with cinematic scrolls — every frame a surge, every transition a hit of energy on screen.",
     objectives: [
-      "Natural language interrogation",
-      "Context retention matrix",
-      "Automated report generation"
+      "Crafted a responsive e-commerce UI with elegant product flow",
+      "Implemented GSAP scroll-triggered animations for immersive storytelling",
+      "Optimized performance for smooth, fast interactions across devices",
+      "Designed a clean, minimalist interface focused on brand impact"
     ],
-    tech: ["TypeScript", "OpenAI", "Python"],
-    image: "/images/noir_typewriter.png",
+    tech: ["React", "Javascript", "Tailwind Css", "Gsap"],
+    image: "/images/kaffaway.png",
     rotation: -4,
     position: "mt-24 md:mt-32 mr-0 md:mr-12"
   },
   {
     id: "top-secret",
     fileNo: "04",
-    title: "THE SYNDICATE",
-    subtitle: "Decentralized Network",
-    year: "1950",
-    location: "Classified",
-    status: "REDACTED",
-    description: "A ledger no one can burn. They tried to trace the funds, but the decentralized network is tighter than the Omertà. Total deniability.",
+    title: "Cloud Kitchen",
+    subtitle: "Online Food Delivery System",
+    year: "2025",
+    location: "Calicut, Kerala",
+    status: "Active",
+    description: "A kitchen empire coded behind dashboards. Built to orchestrate restaurants, products, and orders — every click a command, every update a pulse in real time.",
     objectives: [
-      "Smart contract escrow",
-      "Wallet anonymity protocol",
-      "Immutable record keeping"
+      "Developed core Admin Dashboard features for restaurant, product, and order management",
+      "Implemented authentication and role‑based access control for secure operations",
+      "Enabled real‑time order monitoring and updates",
+      "Built React‑based dashboard interfaces with reusable components",
+      "Designed API‑driven architecture for scalable data flow"
     ],
-    tech: ["Solidity", "Ethers.js", "Next.js"],
-    image: "/images/noir_folder.png",
+    tech: ["Socket.io", "Typescript", "Next.js, OAuth"],
+    image: "/images/cloudkitchen.webp",
     rotation: 4,
     position: "mt-8 md:mt-16 ml-8 md:ml-24"
   }
@@ -88,7 +97,7 @@ export default function Projects() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <section id="holdings" className="relative w-full min-h-screen bg-[#2A241D] py-20 px-4 overflow-hidden font-mono">
+    <section id="work" className="relative w-full min-h-screen bg-[#2A241D] py-20 px-4 overflow-hidden font-mono">
       {/* Wall Texture Patterns (Horizontal Lines for paneling) */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"

@@ -8,36 +8,35 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
-  { name: "React.js", icon: "/react-logo.svg" },
-  { name: "Next.js", icon: "/next-logo.svg" },
-  { name: "JavaScript (ES6+)", icon: "/javascript-logo.svg" },
-  { name: "TypeScript", icon: "/typescript-logo.svg" },
-  { name: "HTML5", icon: "/html5-logo.svg" },
-  { name: "CSS3", icon: "/css3-logo.svg" },
-  { name: "Tailwind CSS", icon: "/tailwind-logo.svg" },
-  { name: "Material UI", icon: "/material-ui-logo.svg" },
-  { name: "React Query", icon: "/react-query-logo.svg" },
-  { name: "Redux", icon: "/redux-logo.svg" },
-  { name: "Angular.js", icon: "/angular-logo.svg" },
-  { name: "Node.js", icon: "/node-logo.svg" },
-  { name: "Express.js", icon: "/express-logo.svg" },
-  { name: "Microservices", icon: "/microservices-logo.svg" },
-  { name: "REST API", icon: "/rest-api-logo.svg" },
-  { name: "Socket.IO", icon: "/socketio-logo.svg" },
-  { name: "JWT Auth", icon: "/jwt-logo.svg" },
-  { name: "Google OAuth", icon: "/oauth-logo.svg" },
-  { name: "SSL", icon: "/ssl-logo.svg" },
-  { name: "MongoDB", icon: "/mongodb-logo.svg" },
-  { name: "Redis", icon: "/redis-logo.svg" },
-  { name: "Docker", icon: "/docker-logo.svg" },
-  { name: "NGINX", icon: "/nginx-logo.svg" },
-  { name: "AWS", icon: "/aws-logo.svg" },
-  { name: "Vercel", icon: "/vercel-logo.svg" },
-  { name: "Netlify", icon: "/netlify-logo.svg" },
-  { name: "Render", icon: "/render-logo.svg" },
-  { name: "GitHub", icon: "/github-logo.svg" },
-  { name: "CI/CD", icon: "/cicd-logo.svg" },
-  { name: "Postman", icon: "/postman-logo.svg" },
+  { name: "React.js", icon: "/images/react-logo.png" },
+  { name: "Next.js", icon: "/images/nextjs-logo.jpeg" },
+  { name: "JavaScript (ES6+)", icon: "/images/javascript-logo.webp" },
+  { name: "TypeScript", icon: "/images/Typescript.svg.png" },
+  { name: "HTML5", icon: "/images/html-logo.png" },
+  { name: "CSS3", icon: "/images/css-logo.png" },
+  { name: "Tailwind CSS", icon: "/images/tailwind-logo.png" },
+  { name: "Material UI", icon: "/images/material-ui-logo.png" },
+  { name: "React Query", icon: "/images/react-query-logo.png" },
+  { name: "Redux", icon: "/images/redux-logo.png" },
+  { name: "Angular.js", icon: "/images/angular-logo.png" },
+  { name: "Express.js", icon: "/images/express-logo.png" },
+  { name: "Microservices", icon: "/images/microservice-logo.png" },
+  { name: "REST API", icon: "/images/rest-api-logo.png" },
+  { name: "Socket.IO", icon: "/images/socket-io-logo.webp" },
+  { name: "JWT Auth", icon: "/images/jwt-logo.jpg" },
+  { name: "Google OAuth", icon: "/images/Oauth-logo.png" },
+  { name: "SSL", icon: "/images/ssl-logo.jpg" },
+  { name: "MongoDB", icon: "/images/mongodb-logo.png" },
+  { name: "Redis", icon: "/images/redis-logo.png" },
+  { name: "Docker", icon: "/images/docker-logo.png" },
+  { name: "NGINX", icon: "/images/nginx-logo.png" },
+  { name: "AWS", icon: "/images/aws-logo.png" },
+  { name: "Vercel", icon: "/images/vercel-logo.png" },
+  { name: "Netlify", icon: "/images/netlify-logo.png" },
+  { name: "Render", icon: "/images/render-logo.jpg" },
+  { name: "GitHub", icon: "/images/github-logo.png" },
+  { name: "CI/CD", icon: "/images/cicd-logo.png" },
+  { name: "Postman", icon: "/images/postman-logo.webp" },
 ];
 
 export default function TechStack() {
@@ -284,7 +283,7 @@ export default function TechStack() {
       `}} />
 
       {/* ── Tall outer container (scroll budget) ── */}
-      <div ref={outerRef} className="ts-outer">
+      <div ref={outerRef} id="services" className="ts-outer">
 
         {/* ── Sticky inner (stays locked in view) ── */}
         <div className="ts-sticky">

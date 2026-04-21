@@ -20,6 +20,20 @@ export default function Contact() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const [dealSecured, setDealSecured] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    contact: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const isFormValid = formData.name.trim() !== "" && 
+                     formData.contact.trim() !== "" && 
+                     formData.message.trim() !== "";
 
   const { contextSafe } = useGSAP({ scope: containerRef });
 
@@ -167,6 +181,9 @@ export default function Contact() {
             <div className="relative flex-1 w-full border-b border-dashed border-[#8a7f6c]">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 placeholder="your good name"
                 className="w-full bg-transparent border-none outline-none text-[#5c2a2a] placeholder-[#8a7f6c]/50 pb-1 font-bold"
               />
@@ -179,6 +196,9 @@ export default function Contact() {
             <div className="relative flex-1 w-full border-b border-dashed border-[#8a7f6c]">
               <input
                 type="text"
+                name="contact"
+                value={formData.contact}
+                onChange={handleInputChange}
                 placeholder="+1 555 0123"
                 className="w-full bg-transparent border-none outline-none text-[#5c2a2a] placeholder-[#8a7f6c]/50 pb-1 font-bold"
               />
@@ -190,6 +210,9 @@ export default function Contact() {
             <span className="font-bold text-[11px] tracking-widest text-[#5c2a2a]">HEREBY AGREE TO THE FOLLOWING TERMS -</span>
             <div className="relative w-full border-b border-dashed border-[#8a7f6c] min-h-[60px]">
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 placeholder="State your business. Be specific. We don't like surprises."
                 className="w-full h-full bg-transparent border-none outline-none resize-none text-[#1a1815] placeholder-[#8a7f6c]/50 pb-1"
               ></textarea>
@@ -229,7 +252,8 @@ export default function Contact() {
           <button
             ref={buttonRef}
             onClick={secureDeal}
-            className={`relative z-10 px-12 py-4 bg-gradient-to-b from-[#8a1c1c] to-[#4a0d0d] text-[#eedebf] text-sm md:text-base tracking-[0.3em] font-bold shadow-[0_5px_15px_rgba(100,20,20,0.5),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-3px_0_rgba(0,0,0,0.3)] hover:brightness-110 active:translate-y-1 transition-all ${typewriter.className}`}
+            disabled={!isFormValid || dealSecured}
+            className={`relative z-10 px-12 py-4 bg-gradient-to-b from-[#8a1c1c] to-[#4a0d0d] text-[#eedebf] text-sm md:text-base tracking-[0.3em] font-bold shadow-[0_5px_15px_rgba(100,20,20,0.5),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-3px_0_rgba(0,0,0,0.3)] hover:brightness-110 active:translate-y-1 transition-all disabled:opacity-40 disabled:grayscale disabled:cursor-not-allowed disabled:brightness-75 disabled:shadow-none disabled:active:translate-y-0 ${typewriter.className}`}
           >
             SEAL THE DEAL
           </button>
