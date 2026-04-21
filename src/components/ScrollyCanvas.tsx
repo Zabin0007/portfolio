@@ -19,24 +19,31 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
     let loadedCount = 0;
+    const SHOW_THRESHOLD = 20;
 
     for (let i = 1; i <= FRAME_COUNT; i++) {
       const img = new Image();
-      // Pad to 3 digits for format ezgif-frame-001.png
       const paddedIndex = String(i).padStart(3, "0");
-      img.src = `/sequence/ezgif-frame-${paddedIndex}.png`;
+      
+      // Try WebP first, fall back to PNG if missing
+      img.src = `/sequence/ezgif-frame-${paddedIndex}.webp`;
       
       img.onload = () => {
         loadedCount++;
-        if (loadedCount === FRAME_COUNT) {
+        if (loadedCount >= SHOW_THRESHOLD && !imagesLoaded) {
           setImagesLoaded(true);
         }
       };
       
-      // Fallback in case of missing images
       img.onerror = () => {
+        // If webp failed, try falling back to png
+        if (img.src.includes(".webp")) {
+          img.src = `/sequence/ezgif-frame-${paddedIndex}.png`;
+          return;
+        }
+
         loadedCount++;
-        if (loadedCount === FRAME_COUNT) {
+        if (loadedCount >= SHOW_THRESHOLD && !imagesLoaded) {
           setImagesLoaded(true);
         }
       };

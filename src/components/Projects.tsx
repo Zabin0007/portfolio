@@ -26,7 +26,7 @@ const projects = [
       "AWS EC2 deployment, armored with SSL"
     ],
     tech: ["Next", "Redis", "Node.js", "Express.js", "MongoDB", "Docker", "Nginx"],
-    image: "/images/nowScore.png",
+    image: "/images/nowScore.webp",
     rotation: -3,
     position: "mt-10 md:mt-24 ml-0 md:ml-12"
   },
@@ -46,7 +46,7 @@ const projects = [
       "Performance optimizations for faster, smoother load times"
     ],
     tech: ["Next.js", "Redux", "Tailwind Css", "OAuth", "JWT Auth"],
-    image: "/images/cb.png",
+    image: "/images/cb.webp",
     rotation: 2,
     position: "mt-4 md:mt-12 mx-auto"
   },
@@ -66,7 +66,7 @@ const projects = [
       "Designed a clean, minimalist interface focused on brand impact"
     ],
     tech: ["React", "Javascript", "Tailwind Css", "Gsap"],
-    image: "/images/kaffaway.png",
+    image: "/images/kaffaway.webp",
     rotation: -4,
     position: "mt-24 md:mt-32 mr-0 md:mr-12"
   },
