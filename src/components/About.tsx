@@ -53,9 +53,9 @@ export default function About() {
                 --MANIFESTO
               </div>
               <p className={`${playfair.className} text-md md:text-2xl text-[#c9c4bb] leading-snug italic font-medium drop-shadow-md`}>
-                "I don't break things.<br />
+                &quot;I don&apos;t break things.<br />
                 I make them <span className="text-[#c2ad79]">disappear</span> —<br />
-                clean, quiet, in production."
+                clean, quiet, in production.&quot;
               </p>
             </div>
             <div className="hidden md:block w-full flex justify-center md:mt-44">
@@ -102,7 +102,7 @@ export default function About() {
             </div>
 
             <p className={`${playfair.className} text-sm md:text-base lg:text-[17px] text-[#948e83]  mb-16 drop-shadow-md`}>
-              A software developer who walks into the woods of legacy code alone. Tailored stack, sharp instincts, no witnesses left behind. Specializes in clean architecture, ruthless refactors, and shipping features that hit the deadline before the deadline hits back. Every line written is a deliberate choice — the kind made by someone who's been at the table long enough to know when to speak in code, and when to let the silence ship.
+              A software developer who walks into the woods of legacy code alone. Tailored stack, sharp instincts, no witnesses left behind. Specializes in clean architecture, ruthless refactors, and shipping features that hit the deadline before the deadline hits back. Every line written is a deliberate choice — the kind made by someone who&apos;s been at the table long enough to know when to speak in code, and when to let the silence ship.
             </p>
 
             {/* Stats Row */}

@@ -118,7 +118,7 @@ export default function Projects() {
           <span>WALL</span>
         </h2>
         <p className="mt-6 text-[#a89d87] text-sm md:text-base font-serif italic max-w-xl text-center px-4 leading-relaxed tracking-wider">
-          Every job pinned. Every score documented. Pull a file — if you've got the stomach for it.
+          Every job pinned. Every score documented. Pull a file — if you&apos;ve got the stomach for it.
         </p>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -288,7 +289,14 @@ export default function TechStack() {
         {/* ── Sticky inner (stays locked in view) ── */}
         <div className="ts-sticky">
           <div className="ts-bg">
-            <img src="/images/tech.webp" alt="Tech background" />
+            <Image
+              src="/images/tech.webp"
+              alt="Tech background"
+              fill
+              className="object-cover"
+              style={{ filter: "brightness(0.5) contrast(1.2)" }}
+              priority
+            />
             <div className="ts-overlay" />
           </div>
 
@@ -308,10 +316,12 @@ export default function TechStack() {
               {skills.map((skill) => (
                 <div key={skill.name} className="ts-card">
                   <div className="ts-card-icon">
-                    <img
+                    <Image
                       src={skill.icon}
                       alt={skill.name}
-                      onError={(e) => (e.currentTarget.style.display = "none")}
+                      width={42}
+                      height={42}
+                      className="object-contain"
                     />
                   </div>
                   <div className="ts-card-label">{skill.name}</div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useScroll, useTransform, useMotionValueEvent, MotionValue } from "framer-motion";
 
 const FRAME_COUNT = 240; 
@@ -53,7 +53,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
 
   const currentIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
-  const drawImage = (index: number) => {
+  const drawImage = useCallback((index: number) => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx || !images[index]) return;
@@ -90,7 +90,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
     
     // Draw image with cover logic
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-  };
+  }, [images]);
 
   useMotionValueEvent(currentIndex, "change", (latest) => {
     if (imagesLoaded) {
@@ -107,7 +107,7 @@ export default function ScrollyCanvas({ children }: ScrollyCanvasProps) {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, [imagesLoaded, currentIndex]);
+  }, [imagesLoaded, currentIndex, drawImage]);
 
   return (
     <div ref={containerRef} className="relative h-[500vh] bg-[#121212]">
